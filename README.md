@@ -17,17 +17,14 @@ The chosen language is JavaScript
 
 ## How I Coded This
 
-The result should be in a new array, with the original array remaining intact.
-
+The result should be in a new array, with the original array remaining intact.  
 Having the required number of chunks, we first need to find out how many elements per chunk should the new array have.
 
-For this I've used the `Math.round` function, with it defaulting to `1` in the cases where the result is 0.
-
+For this I've used the `Math.round` function, with it defaulting to `1` in the cases where the result is 0.  
 Both `Math.floor` and `Math.ceil` will yield wrong new array sizes in certain circumstances (array size 5, split into 4 chunks - this will result in a 3 element array using `Math.ceil`).
 
 
-I've used a reducer function with an accumulator in order to add the elements to the new array.
-
+I've used a reducer function with an accumulator in order to add the elements to the new array.  
 This function adds a new array to the accumulator once the required number of elements per array has been reached (or first iteration), unless the max no. of chunks has been reached, or adds a new element to the previous array until we reach the maximum number of elements per chunk, or reach the maximum number of chunks.
 
 ## How To Install
